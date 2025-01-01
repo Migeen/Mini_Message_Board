@@ -1,13 +1,18 @@
 <html>
 
 <head>
-    <title>User</title>
+    <title><%= title %></title>
 </head>
 
 <body>
+    <a href="/new">message</a>
     <ul>
         <% messages.forEach((message) =>{ %>
-            <%- include('message',{message: message.text}); %>
+            <li>
+                <h2><%=message.user %></h2>
+                <h3><%=message.text %></h3>
+                <h3><%= message.added %></h3>
+            </li>
             <% }); %>
     </ul>
 </body>
